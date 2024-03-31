@@ -1,0 +1,321 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+}
+
+.static-text h1 {
+    white-space: pre-wrap; /* Ensures whitespace is preserved in the typing effect */
+}
+
+h1 {
+    font-size: clamp(2rem, 1.5rem + 1vw, 3rem);
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.4;
+    font-feature-settings: "ss01" on, "ss05" on;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 80%;
+    max-width: 80%;
+    margin-left: 1%;
+}
+
+h2 {
+    font-size: clamp(1rem, 0.5rem + 1vw, 3rem);
+    font-family: "DM Sans", sans-serif;;
+    line-height: 1.4;
+    font-feature-settings: "ss01" on, "ss05" on;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 80%;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #fff; /* Grayish-black background */
+    color: #050505; /* White text */
+    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: background-color 0.3s; /* Smooth transition for background color change if needed */
+}
+
+.menu_hover {
+    visibility: hidden;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 2% 2% auto 10% 10%;
+    align-items: center;
+    width: 100%; /* Set to full width to use the whole screen width */
+    margin: 0 auto;
+}
+
+.header-grid > .left-element {
+    grid-column: 2 / 3; /* This places the left element in the second column */
+    cursor: pointer;
+    font-family: 'Times New Roman', Times, serif
+}
+
+.header-grid > .right-element {
+    grid-column: 4 / 5; /* This places the right element in the fourth column */
+    cursor: pointer;
+}
+
+.services {
+    padding-top: 10vh;
+    white-space: pre-wrap;
+}
+
+.services-flex {
+    display: flex;
+    overflow-x: auto; /* Allows horizontal scrolling for overflow */
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media (max-width: 768px) { /* Adjust the 768px threshold as needed */
+    .services-flex {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+}
+
+.service {
+    margin-right: 35px; /* Example: Adds space between services */
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in;
+    cursor: pointer;
+}
+
+.service-img {
+    width: 100%; /* Make the image width responsive to the container size */
+    max-width: 300px; /* Maximum width */
+    height: auto; /* Adjust the height automatically to maintain the aspect ratio */
+    border-radius: 15px; /* Rounds the corners of the images */
+}
+
+.service-description {
+    font-style: italic; /* Makes the text italic */
+    /* Add more styling here as needed, like margin, font-size, etc. */
+}
+
+.main-service-text {
+    white-space: pre-wrap; /* Ensures whitespace is preserved in the typing effect */
+    visibility: hidden;
+    height: 100%;
+}
+
+.service-info {
+    width: 100%;
+}
+
+.image-container img {
+    flex: 0 0 auto; /* Prevents images from shrinking, ensures they maintain their size */
+    margin-right: 10px; /* Adds some space between the images, adjust as needed */
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+/* Modal Content */
+.modal-content {
+    position: fixed; /* Use fixed positioning */
+    top: 50%; /* Position the top edge of the modal in the middle of the screen */
+    left: 50%; /* Position the left edge of the modal in the middle of the screen */
+    transform: translate(-50%, -50%); /* Shift the modal back by half its width and height to center it */
+    background-color: #ffffff; /* Background black */
+    color: #000000; /* Text white */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* Adjust max-width for your needs */
+    }
+
+.phone {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers the flex items */
+    gap: 8px; /* Optional: adds some space between the <p> and <a> */
+}
+
+.phone p, .phone a {
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Ensures there's no default padding affecting the layout */
+}
+
+.email {
+    display: flex; /* Enables flexbox */
+    align-items: center; /* Vertically centers the flex items */
+    gap: 8px; /* Optional: adds some space between the <p> and <a> */
+}
+
+.email p, .email a {
+    margin: 0; /* Removes default margins */
+    padding: 0; /* Ensures there's no default padding affecting the layout */
+}
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+
+main {
+    padding-top: 25vh; /* This pushes the content down to start at 40% of the viewport height */
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+}
+
+footer {
+    background-color: #1f1f1f;
+    color: #fff;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* Ensure footer is at the bottom if the content is short */
+html, body {
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    flex: 1;
+}
+
+main {
+    flex: 1;
+}
+
+
+.main-menu {
+    background-color: #1f1f1f;
+    font-family: "DM Sans", sans-serif;
+}
+
+.header-menu {
+    background-color: #1f1f1f;
+    color:white;
+}
+
+#menu-in:hover {
+    color:greenyellow
+}
+
+#icon_menu:hover{
+    color:greenyellow
+}
+
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 35px;
+}
+
+.menu-container a {
+    padding: 10px;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    color:white;
+    font-size: 24px;
+    justify-content: space-between;
+    margin-right: 10%;
+}
+
+.menu-container a:hover{
+    color:greenyellow
+}
+
+
+.contact-text-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Default state: Flex column (for smallest screens) */
+.contact-container {
+    margin-top: 10vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds space between items */
+}
+
+/* Medium screens: 2-column grid */
+@media (min-width: 600px) { /* Adjust 600px as needed */
+    .contact-container {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+}
+
+/* Larger screens: 4-column grid */
+@media (min-width: 1024px) { /* Adjust 1024px as needed */
+    .contact-container {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+}
+
+.contact-img {
+    width: 100%; /* Make the image width responsive to the container size */
+    max-width: 800px; /* Maximum width */
+    height: auto; /* Adjust the height automatically to maintain the aspect ratio */
+    border-radius: 15px; /* Rounds the corners of the images */
+}
+
+
+#menu_default:hover{
+    color: grey;
+}
+
+#icon_default:hover{
+    color: grey;
+}
